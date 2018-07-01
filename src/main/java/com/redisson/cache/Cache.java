@@ -6,6 +6,5 @@ public interface Cache {
     void put(String key, Object value, int timeToIdleAndLiveSeconds);
     boolean remove(String key);
     boolean removeByKeyPrefix(String keyPrefix);
-
 }
 

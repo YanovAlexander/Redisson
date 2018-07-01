@@ -46,8 +46,10 @@ public class AppConfig implements ServletContextListener {
                 RedissonCacheManagerProvider.init(getCacheConfigLocationReserve(ctx));
             }
 
-            LOG.debug("Init hibernate session factory");
-            HibernateSessionProvider.init(getHibernateConfigLocation(ctx));
+//            LOG.debug("Init hibernate session factory");
+//            HibernateSessionProvider.init(getHibernateConfigLocation(ctx));
+            LOG.debug("Init mongoDB provider");
+            MongoDBProvider.init();
 
             LOG.debug("Create guice injector");
             SL.load(createInjector());

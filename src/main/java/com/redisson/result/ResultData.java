@@ -1,16 +1,31 @@
-package com.redisson.score;
+package com.redisson.result;
 
-public class ScoreData {
+import org.bson.types.ObjectId;
+
+public class ResultData {
+    private ObjectId id;
     private String homeTeam;
     private String awayTeam;
     private String result;
     private String group;
 
-    public ScoreData(String homeTeam, String awayTeam, String result, String group) {
+    public ResultData() {
+    }
+
+    public ResultData(ObjectId id, String homeTeam, String awayTeam, String result, String group) {
+        this.id = id;
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.result = result;
         this.group = group;
+    }
+
+    public String getId() {
+        return id.toString();
+    }
+
+    public void setId(String id) {
+        this.id = new ObjectId(id);
     }
 
     public String getHomeTeam() {
